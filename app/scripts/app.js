@@ -6,14 +6,16 @@ import { Provider } from 'react-redux';
 
 import Header from './components/header.js';
 import HomePage from './components/home-page.js';
+import SearchResultsPage from './components/search-results-page.js';
 
 export default function app() {
   render(
     <Provider store={store}>
       <Router>
-        <div>
+        <div className="page-wrapper">
           <Header />
           <Route exact path="/" component={HomePage} />
+          <Route exact path="/search-results" component={SearchResultsPage} />
         </div>
       </Router>
     </Provider>,

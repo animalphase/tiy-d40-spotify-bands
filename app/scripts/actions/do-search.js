@@ -4,10 +4,11 @@ export default function doSearch(searchTerm) {
   //All async action creators should return a function that takes 'dispatch' as its argument
   return function(dispatch) {
     //Before ajax call dispatch any needed actions
-    // dispatch( { type: "STARTING_EXAMPLE_ASYNC" });
+    // dispatch({ type: 'UPDATE_PATH_QUERY', searchParameter: searchTerm });
     // searchTerm = searchTerm.split(' ').join('+');
-    // console.log('searching for:', searchTerm);
+    // // console.log('searching for:', searchTerm);
     // history.push(history.push('/search-results'));
+    // history.push(`/search-results?q=${searchTerm}`);
     //Do the ajax call
     return $.ajax({
       method: 'GET',
@@ -30,7 +31,7 @@ export default function doSearch(searchTerm) {
         },
         []
       );
-      console.log('found artists:', foundArtists);
+      // console.log('found artists:', foundArtists);
       dispatch({ type: 'RETURN_ARTISTS', artists: foundArtists });
     });
   };

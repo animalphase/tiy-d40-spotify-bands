@@ -34,12 +34,14 @@ class SearchResultsPage extends React.Component {
     this.props.dispatch(doSearch(searchTerm));
   }
 
+  // after navigating to search page with a query
   componentWillMount() {
     let searchTerm = this.props.location.search;
     searchTerm = searchTerm.slice(3, searchTerm.length);
     this.search(searchTerm);
   }
 
+  // after perfoming additional searches while on the search page
   componentWillUpdate(nextProps) {
     let searchTerm = nextProps.location.search;
     searchTerm = searchTerm.slice(3, searchTerm.length);

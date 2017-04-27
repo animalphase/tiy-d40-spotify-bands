@@ -10,6 +10,29 @@ html {
   background-color: tint($color-borders, 95%);
 }
 
+.search-results-container {
+
+}
+.artist-result {
+  display: inline-block;
+  width: 30rem;
+  margin: 2rem;
+  background: #fff;
+  border: .1rem solid $color-borders;
+
+  h3 {
+    padding: .2rem 1rem;
+  }
+  .artist-image {
+    display: block;
+    width: 100%;
+  }
+
+  a {
+    display: inline-block;
+    padding: .8rem 1rem;
+  }
+}
 
 
 .page-wrapper.markdown {

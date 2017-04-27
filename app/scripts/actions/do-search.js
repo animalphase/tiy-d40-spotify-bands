@@ -18,10 +18,12 @@ export default function doSearch(searchParameters, history) {
         (building, artist, index) => {
           building.push(
             new Artist({
-              id: artist.id || '',
-              artistName: artist.name || '',
-              artistImage: artist.images[0] ? artist.images[0].url : '',
-              spotifyLink: artist.external_urls.spotify || ''
+              id: artist.id,
+              artistName: artist.name,
+              artistImage: artist.images[0]
+                ? artist.images[0].url
+                : 'https://pbs.twimg.com/profile_images/600060188872155136/st4Sp6Aw.jpg',
+              spotifyLink: artist.external_urls.spotify
             })
           );
           return building;

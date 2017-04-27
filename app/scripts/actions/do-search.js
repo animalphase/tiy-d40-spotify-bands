@@ -1,17 +1,17 @@
 import Artist from '../models/artist.js';
 
-export default function doSearch(searchParameters, history) {
+export default function doSearch(searchTerm) {
   //All async action creators should return a function that takes 'dispatch' as its argument
   return function(dispatch) {
     //Before ajax call dispatch any needed actions
     // dispatch( { type: "STARTING_EXAMPLE_ASYNC" });
-    searchParameters = searchParameters.split(' ').join('+');
-    console.log('searching for:', searchParameters);
-    history.push(history.push('/search-results'));
+    // searchTerm = searchTerm.split(' ').join('+');
+    // console.log('searching for:', searchTerm);
+    // history.push(history.push('/search-results'));
     //Do the ajax call
     return $.ajax({
       method: 'GET',
-      url: `https://api.spotify.com/v1/search?q=${searchParameters}&type=artist`,
+      url: `https://api.spotify.com/v1/search?q=${searchTerm}&type=artist`,
       dataType: 'json'
     }).then(function(response) {
       let foundArtists = response.artists.items.reduce(
